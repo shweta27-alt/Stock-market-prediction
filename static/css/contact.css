@@ -1,0 +1,23 @@
+.end {
+	padding: 80px;
+	text-align: center;
+	background-color: #474e5d;
+	color: white;
+  }
+  a{
+	color:white;
+  }
+  a:hover {
+	color: #d8dbf0;
+  }
+  Table{
+	text-align: center;
+   
+  }
+  
+  @media screen and (max-width: 650px) {
+	.column {
+	  width: 100%;
+	  display: block;
+	}
+  }

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .center {
+            margin: auto;
+            width: 30%;
+            padding: 10px;
+            color: white;
+        }
+        
+        label {
+            font-size: 1.5vw;
+            color: #FFFFFF;
+        }
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Your Stock Your price - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/business-casual.min.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+        <span class="site-heading-upper text-primary mb-3">Learn Stock Market and predict easily with</span>
+        <span class="site-heading-lower">Investment,the smart move. Loaded with benefits.</span>
+    </h1>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="/">Home</a>
+                        <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="/stock">Stock</a>
+                    </li>
+                    <li class="nav-item px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="/about">About</a>
+                    </li>
+                    <li class="nav-item  px-lg-4">
+                        <a class="nav-link text-uppercase text-expanded" href="/products">Services</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="center">
+
+
+
+        <html>
+
+        <body>
+
+            <center>
+                <h1>Stock Prediction</h1>
+            </center>
+
+            <br>
+
+            <form action="/stock" method="post" id="usrform">
+
+
+                <h2>
+                    <center><label>Enter Stock Symbol </label></center>
+                </h2>
+                <center><input type="text" name="stock_name" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')" style=" border-radius: 5px;font-size: 1vw; padding: 10px 10px;width: 40%;" placeholder="Enter stock Ticker"></center>
+
+                <br>
+                <h2>
+                    <center><label>Enter Start Date </label></center>
+                </h2>
+                <center><input type="date" name="start_date" label="usrname" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')" style=" border-radius: 5px; font-size: 1vw; padding: 10px 10px; width: 40%;"></center>
+
+                <br>
+                <h2>
+                    <center><label>Enter End Date </label></center>
+                </h2>
+                <center><input type="date" name="end_date" label="usrname" onfocus="this.value=''; setbg('#e5fff3');" onblur="setbg('white')" style=" border-radius: 5px;font-size: 1vw; padding: 10px 10px;width: 40%;"></center>
+
+                <br>
+                <center><input id="button" type="submit" placeholder="Check!!!" style="background-color: #2a736c; border-radius: 5px;color: #FFFFFF;font-size: 1.4vw;padding: 10px 10px;width: 40%;"></center>
+            </form>
+            <!-- <label>Enter Start Date </label> 
+  Name: <br>
+  <input type="date" name='start_date' label="usrname">
+ 
+
+  <label>Enter End Date </label>
+  Name: <br>
+  <input type="date" name='end_date' label="usrname">
+ 
+  <input type="text" name="stock_name" placeholder="Enter stock ticker">
+  <input type="submit" >-->
+
+            <br><br> {% if openImg != None %}
+            <img src="data:image/png;base64, {{ openImg }}" alt=""> {% endif %}
+
+            <br><br> {% if closeImg != None %}
+            <img src="data:image/png;base64, {{ closeImg }}" alt=""> {% endif %}
+
+            <br><br> {% if PredImg != None %}
+            <img src="data:image/png;base64, {{ PredImg }}" alt=""> {% endif %}
+
+            <br><br> {% if HundImg != None %}
+            <img src="data:image/png;base64, {{ HundImg }}" alt=""> {% endif %}
+
+            <br><br><br>
+
+
+            <!-- 
+  
+
+<form action="/action_page.php" id="usrform">
+  
+  </form>123123123 -->
+
+            <br>
+
+
+
+        </body>
+
+        </html>
+
+    </div>
+    <footer class="footer text-faded text-center py-5">
+        <div class="container">
+            <p class="m-0 small">Copyright @ shweta</p>
+            <p class="m-0 small">Contact us : shwetasaindane27@gmail.com</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+</body>
+
+</html>
